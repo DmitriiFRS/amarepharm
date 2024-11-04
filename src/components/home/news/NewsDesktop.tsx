@@ -59,7 +59,9 @@ const NewsDesktop: React.FC<Props> = ({ lng }) => {
             }}>
             {news.map(el => {
                return (
-                  <SwiperSlide className='border border-neutral-stroke rounded-2xl w-[100%_!important] p-[20px] aspect-[389/260] news-slide-hovered-wrapper overflow-hidden'>
+                  <SwiperSlide
+                     key={el.id}
+                     className='border border-neutral-stroke rounded-2xl w-[100%_!important] p-[20px] aspect-[389/260] news-slide-hovered-wrapper overflow-hidden'>
                      <Link href={el.href} className='flex flex-col justify-between h-full'>
                         <div className='font-semibold text-[20px] leading-[140%] tracking-tightest news-slide-hovered'>
                            {el.title}
