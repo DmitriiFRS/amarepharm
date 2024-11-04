@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+   @apply flex-[1_1_auto];
+}
+
+html,
+body {
+   @apply h-full w-full;
+}
+@layer base {
+   body {
+      line-height: 1;
+      font-family: 'Raleway', system-ui, sans-serif;
+   }
+   @font-face {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(/fonts/Raleway/statis/Raleway-Light.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/Raleway/statis/Raleway-Regular.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(/fonts/Raleway/statis/Raleway-Medium.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(/fonts/Raleway/statis/Raleway-SemiBold.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(/fonts/Raleway/statis/Raleway-Bold.ttf) format('ttf');
+   }
+
+   /* ================================== */
+
+   @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(/fonts/Rubik/statis/Rubik-Light.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/Rubik/statis/Rubik-Regular.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(/fonts/Rubik/statis/Rubik-Medium.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(/fonts/Rubik/statis/Rubik-SemiBold.ttf) format('ttf');
+   }
+   @font-face {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(/fonts/Rubik/statis/Rubik-Bold.ttf) format('ttf');
+   }
+   .hero-swiper .swiper-wrapper {
+      gap: 16px;
+   }
+
+   .spin-button {
+      border: 0;
+      position: relative;
+   }
+
+   .spin-button::before,
+   .spin-button::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 0 solid transparent;
+   }
+
+   .active-hero-thumb .spin {
+      height: 72px;
+      width: 72px;
+   }
+
+   .active-hero-thumb .spin::before,
+   .active-hero-thumb .spin::after {
+      top: 0;
+      left: 0;
+      border: 0 solid transparent;
+   }
+
+   .active-hero-thumb .spin::before {
+      border: 2px solid transparent;
+   }
+
+   .active-hero-thumb .spin::before {
+      border-top-color: #fff;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+      transition: border-top-color 7s linear, border-right-color 7s linear, border-bottom-color 7s linear;
+   }
+
+   .active-hero-thumb .spin::after {
+      border: 0 solid transparent;
+      border-top: 2px solid #fff;
+      border-left-width: 2px;
+      border-right-width: 2px;
+      transform: rotate(360deg); /* Начальное значение для плавного старта */
+      transition: transform 7s linear; /* Время вращения 7 секунд */
+   }
+
+   .circle {
+      border-radius: 100%;
+      box-shadow: none;
+   }
+
+   .circle::before,
+   .circle::after {
+      border-radius: 100%;
+   }
+   /* ---------------------------------- */
+   .service-accordion-wrapper .MuiAccordion-rounded {
+      box-shadow: none;
+      border-radius: 16px;
+   }
+   .service-accordion-wrapper .MuiCollapse-root {
+      margin-top: -24px;
+   }
+   .service-accordion-summary {
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+   }
+   .service-accordion-wrapper .MuiAccordion-rounded:before {
+      display: none;
+   }
+   .service-accordion .MuiAccordionSummary-content {
+      height: 100%;
+      outline: none !important;
+   }
+   .service-accordion-details .MuiAccordion-rounded {
+      border: 1px solid transparent !important;
+      outline: none !important;
+      z-index: 99;
+   }
+   /* ---------------------------------- */
+   .service-tabs-item:hover .service-tabs-icon-hovered {
+      display: block;
+   }
+   .service-tabs-item:hover .service-tabs-icon {
+      display: none;
+   }
+   .service-tabs-item:hover .service-tabs-bg {
+      opacity: 1;
+   }
+   .service-tabs-item:hover .service-tabs-bg-gradient {
+      opacity: 0.92;
+   }
+   .service-tabs-item:hover .service-tabs-title {
+      color: #fff;
+   }
+   .service-tabs-item:hover .service-tabs-span {
+      color: #fff;
+   }
+   .service-tabs-bg {
+      opacity: 0;
+      transition: 0.2s;
+   }
+   .service-tabs-bg-gradient {
+      opacity: 0;
+      transition: 0.2s;
+   }
+   .service-tabs-info-p {
+      display: -webkit-box; /* Устанавливает flex-контейнер */
+      -webkit-box-orient: vertical; /* Устанавливает вертикальную ориентацию */
+      overflow: hidden; /* Обрезает содержимое, выходящее за пределы */
+      text-overflow: ellipsis; /* Добавляет многоточие */
+      -webkit-line-clamp: 2; /* Ограничивает текст двумя строками */
+      line-clamp: 2;
+   }
+   /* ---------------------------------- */
+   .network-cols {
+      -ms-overflow-style: none; /* IE и Edge */
+      scrollbar-width: none; /* Firefox */
+   }
+   .network-cols::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+   }
+   /* ---------------------------------- */
+   .swiper-news-desktop .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 16px;
+   }
+   .swiper-news-desktop .swiper-slide {
+      width: 100%;
+   }
+   .news-slide-hovered-wrapper {
+      border-radius: 16px;
+   }
+   .news-slide-hovered-wrapper:hover .news-slide-hovered {
+      background: linear-gradient(225deg, #c874a9 0%, #8874c8 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+
+   .news-slide-hovered-wrapper:hover::before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      padding: 1px; /* Толщина границы */
+      background: linear-gradient(225deg, #c874a9 0%, #8874c8 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+   }
+}
